@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class UsersController extends Controller
 {
@@ -16,17 +17,7 @@ class UsersController extends Controller
 
     public function show(User $user)
     {
-        return view('user.show',compact('user'));
-    }
-
-//    public function test()
-//    {
-//        dd(1);
-//    }
-    public function getUsers()
-    {
-        $users = User::all();
-        return $users;
+        return view('users.show',compact('user'));
     }
 
 

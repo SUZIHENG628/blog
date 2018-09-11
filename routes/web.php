@@ -45,7 +45,7 @@ Route::get('/','StaticPagesController@home')->name('home');
 Route::get('/help','StaticPagesController@help')->name('help');
 Route::get('/about','StaticPagesController@about')->name('about');
 
-Route::get('signup','UserController@create')->name('signup');
+Route::get('signup','UsersController@create')->name('signup');
 //Route::resource('users','UserController');
 
 
@@ -58,10 +58,21 @@ Route::get('/users/create','UsersController@create')->name('users.create');
 Route::post('/users','UsersController@store')->name('users.store');
 Route::get('/users/{user}/edit'.'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}','UsersController@update')->name('users.update');
-Route::delete('/users/{user}','UsersController@destory')->name('users.delete');
+Route::delete('/users/{user}','UsersController@destroy')->name('users.destroy');
 
 
 //
 //Route::get('/test','UsersController@test');
 
-Route::get('getusers','UsersController@getUsers');
+Route::get('createuser','UsersController@createUser');
+
+//
+//Route::get('create',function (){
+//  $sql = DB::table('users')->insert(['name'=>'suziheng','email'=>'326262569@qq.com','password'=>'123'])->toSql();
+//  return $sql;
+//});
+
+
+Route::get('test','UsersController@getUsers');
+
+Route::get('test1','UsersController@test');
