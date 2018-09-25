@@ -61,6 +61,15 @@ Route::patch('/users/{user}','UsersController@update')->name('users.update');
 Route::delete('/users/{user}','UsersController@destroy')->name('users.destroy');
 
 
+//Sessions
+
+Route::get('login','SessionsController@create')->name('login');
+Route::post('login','SessionsController@store')->name('login');
+Route::delete('logout','SessionsController@destroy')->name('logout');
+
+
+
+
 //
 //Route::get('/test','UsersController@test');
 
